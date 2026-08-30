@@ -115,6 +115,35 @@
     width: 100%;
 }
 
+.search-mode-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 80%;
+    max-width: 25rem;
+}
+
+.search-mode-control label {
+    flex: 0 0 auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.search-mode-control select {
+    flex: 1;
+    min-width: 0;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-mode-control select:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
 .search-form form>input {
     padding: 1rem;
     border: none;
@@ -182,7 +211,7 @@
     object-position: center 0;
     opacity: 1;
     border-radius: 0.5rem;
-    background-image: url("https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png");
+    background-image: url("../icons/album-placeholder.svg");
     background-size: cover;
     background-position: center;
     color: transparent;
@@ -248,7 +277,7 @@
     height: 4rem;
     border-radius: 0.5rem;
     object-fit: cover;
-    background-image: url("https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png");
+    background-image: url("../icons/album-placeholder.svg");
     background-size: cover;
     background-position: center;
     color: transparent;
