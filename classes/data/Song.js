@@ -14,7 +14,7 @@ class Song {
         this.artists = songInfo.artist ? [new Artist({ name: songInfo.artist.name })] : [];
 
         /** @type {string} */
-        this.albumCoverUrl = songInfo.album?.image?.[2]?.['#text'] || songInfo.album?.image?.[1]?.['#text'] || songInfo.album?.image?.[0]?.['#text'] || null;
+        this.albumCoverUrl = songInfo.album?.image?.[3]?.['#text'] || songInfo.album?.image?.[2]?.['#text'] || songInfo.album?.image?.[1]?.['#text'] || songInfo.album?.image?.[0]?.['#text'] || './icons/album-placeholder.svg';
 
         /** @type {bool} */
         this.hasSyncedLyrics = lyrics?.syncedLyrics ? true : false;
