@@ -15,6 +15,8 @@ class SearchController {
         this.searchInput = document.querySelector('#song-name');
         /** @type {HTMLButtonElement | null} */
         this.searchButton = document.querySelector('#search');
+        /** @type {HTMLSelectElement | null} */
+        this.searchMode = document.querySelector('#search-mode');
 
         /** @type {Element | null} */
         this.cloneableSelectSong = document.querySelector(
@@ -34,6 +36,18 @@ class SearchController {
             });
         }
 
+        if (this.searchMode && this.searchInput) {
+            this.searchMode.addEventListener('change', () => {
+                const placeholders = {
+                    general: 'Song title or artist',
+                    song: 'Song title',
+                    artist: 'Artist name',
+                };
+
+                this.searchInput.placeholder =
+                    placeholders[this.searchMode.value] || placeholders.general;
+            });
+        }
     }
 
     /**
@@ -57,12 +71,22 @@ class SearchController {
 
         this.searchInput.setAttribute('disabled', 'true');
         this.searchButton.setAttribute('disabled', 'true');
+        this.searchMode?.setAttribute('disabled', 'true');
 
         this.appShell.hideError();
         this.appShell.displaySearching(SEARCHING_FOR_SONG);
 
         try {
-            this.state.songs = await this.fetcher.getSongInfos(name, SONGS_TO_FETCH);
+            const mode = this.searchMode?.value || 'general';
+            this.state.songs = await this.fetcher.getSongInfos(
+                name,
+                SONGS_TO_FETCH,
+                mode
+            );
+
+            if (this.state.songs.length === 0) {
+                throw new Error('No matching songs found');
+            }
 
             this.populateSongSelection();
             this.appShell.displayScreen(2);
@@ -77,6 +101,7 @@ class SearchController {
         this.appShell.hideSearching();
         this.searchInput.removeAttribute('disabled');
         this.searchButton.removeAttribute('disabled');
+        this.searchMode?.removeAttribute('disabled');
     }
 
     /**
@@ -142,4 +167,3 @@ class SearchController {
         }
     }
 }
-
