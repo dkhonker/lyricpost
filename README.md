@@ -10,7 +10,9 @@ Users can then select lines from the lyrics and generate a stylish image with cu
 
 ## Features
 
-- Finding a song using [Last.fm](https://www.last.fm/)
+- Finding music by song title, artist, or both using [Last.fm](https://www.last.fm/)
+- Retrying missing Chinese cover metadata with Hong Kong Traditional names
+- Showing a local placeholder when no cover is available from Last.fm
 - Fetching album cover from [CoverArtArchive](https://coverartarchive.org/)
 - Fetching the lyrics from [lrclib](https://lrclib.net/docs)
 - Generating a share-ready lyrics image with selected lyrics

@@ -28,10 +28,18 @@
                     <h1>LyricPost</h1>
                 </header>
                 <form>
-                    <input class="surface" type="text" id="song-name" placeholder="Song name and author here">
+                    <div class="search-mode-control">
+                        <label for="search-mode">Search by</label>
+                        <select class="surface" id="search-mode">
+                            <option value="general" selected>General</option>
+                            <option value="song">Song title</option>
+                            <option value="artist">Artist</option>
+                        </select>
+                    </div>
+                    <input class="surface" type="text" id="song-name" placeholder="Song title or artist">
                     <button class="primary" id="search">
                         <span class="material-symbols-outlined">music_note</span>
-                        Find that song!
+                        Find music
                     </button>
                 </form>
                 <div class="searching hidden"></div>
@@ -309,6 +317,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.4.2/dist/umd/full.js"></script>
     <script src="classes/constants.js"></script>
     <script src="classes/data/Artist.js"></script>
     <script src="classes/data/Lyric.js"></script>

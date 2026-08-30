@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v4';
+const CACHE_NAME = 'v6';
 
 // Paths are relative to this file's location, not the domain root: the app is
 // served from a GitHub Pages subpath (/lyricpost/), where a leading slash would
@@ -24,6 +24,7 @@ const urlsToCache = [
     './classes/data/Song.js',
     './manifest.json',
     './icons/favicon.ico',
+    './icons/album-placeholder.svg',
     './icons/icon-192.png',
     './icons/icon-512.png',
 ];
@@ -35,6 +36,7 @@ const urlsToCache = [
 const externalHosts = [
     'html2canvas.hertzen.com',
     'cdnjs.cloudflare.com',
+    'cdn.jsdelivr.net',
     'fonts.googleapis.com',
     'fonts.gstatic.com',
 ];
@@ -46,6 +48,7 @@ const externalHosts = [
 const externalUrlsToCache = [
     'https://html2canvas.hertzen.com/dist/html2canvas.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js',
+    'https://cdn.jsdelivr.net/npm/opencc-js@1.4.2/dist/umd/full.js',
     'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0',
     'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
     'https://fonts.googleapis.com/css2?family=Noto+Sans+HK&family=Noto+Sans+JP&family=Noto+Sans+KR&family=Noto+Sans+SC&family=Noto+Sans+TC&display=swap',
